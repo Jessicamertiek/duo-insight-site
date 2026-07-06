@@ -26,15 +26,15 @@ function Hero() {
 
           <div className="hero-buttons">
 
-            <button className="btn-primary">
-              Solicitar Demonstração
-            </button>
+  <a href="#contato" className="btn-primary">
+    Solicitar Demonstração
+  </a>
 
-            <button className="btn-secondary">
-              Conhecer Soluções
-            </button>
+  <a href="#servicos" className="btn-secondary">
+    Conhecer Soluções
+  </a>
 
-          </div>
+</div>
 
         </div>
 
