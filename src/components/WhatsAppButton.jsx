@@ -1,4 +1,5 @@
 import "../styles/whatsapp.css";
+import { FaWhatsapp } from "react-icons/fa";
 
 function WhatsAppButton() {
   const mensagem =
@@ -15,8 +16,9 @@ function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Conversar no WhatsApp"
+      title="Fale conosco pelo WhatsApp"
     >
-      💬
+      <FaWhatsapp size={34} />
     </a>
   );
 }

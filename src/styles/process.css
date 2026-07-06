@@ -1,0 +1,191 @@
+.process {
+
+    padding: 90px 10%;
+
+    background: #081321;
+
+}
+
+.process-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 70px;
+
+    text-align: center;
+
+}
+
+.process-header span {
+
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    border-radius: 40px;
+
+    background: rgba(30,94,255,.12);
+
+    color: #73B3FF;
+
+    font-weight: 600;
+
+    margin-bottom: 22px;
+
+}
+
+.process-header h2 {
+
+    color: white;
+
+    font-size: 46px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+
+}
+
+.process-header p {
+
+    color: #C7D2E4;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+.process-grid {
+
+    max-width: 1450px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 28px;
+
+}
+
+.process-card {
+
+    position: relative;
+
+    background: linear-gradient(180deg,#0F1E34,#0B1728);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    transition: .35s;
+
+    overflow: hidden;
+
+}
+
+.process-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #1E5EFF;
+
+    box-shadow: 0 20px 40px rgba(30,94,255,.20);
+
+}
+
+.process-number {
+
+    position: absolute;
+
+    top: 22px;
+
+    right: 25px;
+
+    font-size: 52px;
+
+    font-weight: 800;
+
+    color: rgba(255,255,255,.05);
+
+}
+
+.process-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: linear-gradient(135deg,#1E5EFF,#FF2D8D);
+
+    color: white;
+
+    font-size: 28px;
+
+    margin-bottom: 28px;
+
+}
+
+.process-card h3 {
+
+    color: white;
+
+    font-size: 24px;
+
+    margin-bottom: 18px;
+
+}
+
+.process-card p {
+
+    color: #C7D2E4;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+}
+
+@media(max-width:1100px){
+
+.process-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.process{
+
+padding:70px 7%;
+
+}
+
+.process-header h2{
+
+font-size:36px;
+
+}
+
+.process-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}

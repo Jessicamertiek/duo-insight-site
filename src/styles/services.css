@@ -1,71 +1,157 @@
+.services {
+
+    padding: 70px 10%;
+
+    background: #07111F;
+
+}
+
+.services-header {
+
+    max-width: 760px;
+
+    margin: 0 auto 60px;
+
+    text-align: center;
+
+}
+
+.services-header h2 {
+
+    font-size: 44px;
+
+    color: #FFFFFF;
+
+    margin-bottom: 18px;
+
+}
+
+.services-header p {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #C7D2E4;
+
+}
+
+.services-grid {
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+
+    gap: 30px;
+
+}
+
+.service-card {
+
+    background: linear-gradient(180deg,#0F1E34,#0B1728);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    transition: .35s;
+
+    text-align: left;
+
+}
+
+.service-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #1E5EFF;
+
+    box-shadow: 0 20px 40px rgba(30,94,255,.20);
+
+}
+
+.service-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(135deg,#1E5EFF,#FF2D8D);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: white;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+
+}
+
+.service-card h3 {
+
+    font-size: 23px;
+
+    color: white;
+
+    margin-bottom: 16px;
+
+}
+
+.service-card p {
+
+    color: #C7D2E4;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin: 0;
+
+}
+
+@media(max-width:900px){
+
 .services{
 
-width:90%;
-
-max-width:1400px;
-
-margin:120px auto;
-
-text-align:center;
+padding:60px 7%;
 
 }
 
-.services h2{
+.services-header h2{
 
-font-size:46px;
-
-margin-bottom:20px;
-
-}
-
-.services p{
-
-color:#BFC9DA;
-
-margin-bottom:60px;
-
-font-size:20px;
+font-size:36px;
 
 }
 
 .services-grid{
 
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:30px;
+grid-template-columns:1fr;
 
 }
 
 .service-card{
 
-background:#0F1E34;
-
-padding:45px;
-
-border-radius:20px;
-
-border:1px solid rgba(255,255,255,.08);
-
-transition:.35s;
-
-cursor:pointer;
+text-align:center;
 
 }
 
-.service-card:hover{
+.service-icon{
 
-transform:translateY(-10px);
-
-border-color:#FF2D8D;
-
-box-shadow:0 25px 50px rgba(30,94,255,.25);
+margin:0 auto 25px;
 
 }
-
-.service-card h3{
-
-font-size:22px;
 
 }

@@ -1,5 +1,12 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import {
+  FaEnvelope,
+  FaWhatsapp,
+  FaClock,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+
 import "../styles/contact.css";
 
 function Contact() {
@@ -27,6 +34,7 @@ function Contact() {
 
   return (
     <section id="contato" className="contact">
+
       <h2>Solicite uma Demonstração</h2>
 
       <p>
@@ -34,49 +42,80 @@ function Contact() {
         Inteligência Artificial e Automação.
       </p>
 
-      <form ref={form} onSubmit={enviarEmail}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Seu nome"
-          required
-        />
+      <div className="contact-container">
 
-        <input
-          type="text"
-          name="company"
-          placeholder="Empresa"
-        />
+        <form ref={form} onSubmit={enviarEmail}>
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Seu e-mail"
-          required
-        />
+          <input
+            type="text"
+            name="name"
+            placeholder="Seu nome"
+            required
+          />
 
-        <input
-          type="text"
-          name="phone"
-          placeholder="WhatsApp"
-        />
+          <input
+            type="text"
+            name="company"
+            placeholder="Empresa"
+          />
 
-        <textarea
-          name="message"
-          placeholder="Como podemos ajudar?"
-          required
-        ></textarea>
+          <input
+            type="email"
+            name="email"
+            placeholder="Seu e-mail"
+            required
+          />
 
-        <button type="submit">
-          Enviar Solicitação
-        </button>
-      </form>
+          <input
+            type="text"
+            name="phone"
+            placeholder="WhatsApp"
+          />
 
-      <div className="contact-info">
-        <p>📧 duoalves.inteligencia@gmail.com</p>
+          <textarea
+            name="message"
+            placeholder="Como podemos ajudar?"
+            required
+          />
 
-        <p>📱 (31) 99912-6371</p>
+          <button type="submit">
+            Enviar Solicitação
+          </button>
+
+        </form>
+
+        <div className="contact-card">
+
+          <h3>Fale Conosco</h3>
+
+          <p>
+            Nossa equipe responde rapidamente às solicitações enviadas pelo site.
+          </p>
+
+          <div className="contact-item">
+            <FaEnvelope />
+            <span>duoalves.inteligencia@gmail.com</span>
+          </div>
+
+          <div className="contact-item">
+            <FaWhatsapp />
+            <span>(31) 99912-6371</span>
+          </div>
+
+          <div className="contact-item">
+            <FaClock />
+            <span>Segunda a Sexta • 08h às 18h</span>
+          </div>
+
+          <div className="contact-item">
+            <FaMapMarkerAlt />
+            <span>Atendimento em todo o Brasil</span>
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

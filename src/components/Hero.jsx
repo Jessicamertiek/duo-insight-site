@@ -9,32 +9,54 @@ function Hero() {
         <div className="hero-content">
 
           <span className="hero-badge">
-            Business Intelligence • Inteligência Artificial • Automação
+            Business Intelligence • Power BI • Inteligência Artificial
           </span>
 
           <h1>
             Transformamos dados em
-            <span> decisões inteligentes.</span>
+            <span> resultados inteligentes.</span>
           </h1>
 
           <p>
-            A Duo Insight ajuda empresas a reduzir custos,
-            aumentar produtividade e tomar decisões estratégicas
-            através de Dashboards Power BI, Inteligência Artificial,
-            Automação e Business Intelligence.
+            A Duo Insight desenvolve soluções em Business Intelligence,
+            Dashboards Power BI, Inteligência Artificial e Automação para
+            empresas que desejam reduzir custos, aumentar produtividade e
+            tomar decisões baseadas em dados.
           </p>
 
           <div className="hero-buttons">
 
-  <a href="#contato" className="btn-primary">
-    Solicitar Demonstração
-  </a>
+            <a
+              href="#contato"
+              className="btn-primary"
+            >
+              Solicitar Demonstração
+            </a>
 
-  <a href="#servicos" className="btn-secondary">
-    Conhecer Soluções
-  </a>
+            <a
+              href="#servicos"
+              className="btn-secondary"
+            >
+              Conhecer Soluções
+            </a>
 
-</div>
+          </div>
+
+          <div className="hero-highlights">
+
+            <div className="highlight-item">
+              ✓ Dashboards Power BI
+            </div>
+
+            <div className="highlight-item">
+              ✓ Inteligência Artificial
+            </div>
+
+            <div className="highlight-item">
+              ✓ Automação de Processos
+            </div>
+
+          </div>
 
         </div>
 
