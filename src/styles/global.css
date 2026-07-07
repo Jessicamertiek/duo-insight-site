@@ -14,8 +14,34 @@ body{
     font-family:'Inter',sans-serif;
     background:#07111F;
     color:white;
+    overflow-x:hidden;
 }
 
-button{
+#root{
+    min-height:100vh;
+}
+
+.page-content{
+    padding-top:110px;
+    min-height:calc(100vh - 110px);
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+button,
+input,
+textarea{
     font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+section{
+    position:relative;
 }

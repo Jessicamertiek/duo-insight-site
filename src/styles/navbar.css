@@ -1,22 +1,30 @@
 .navbar{
 
-    position: fixed;
+    position:fixed;
 
-    top: 0;
+    top:0;
 
-    left: 0;
+    left:0;
 
-    width: 100%;
+    width:100%;
 
-    z-index: 999;
+    z-index:1000;
 
-    background: rgba(7,17,31,.88);
+    transition:.35s;
 
-    backdrop-filter: blur(20px);
+    background:rgba(7,17,31,.78);
 
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    backdrop-filter:blur(18px);
 
-    transition: .35s;
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.navbar-scrolled{
+
+    background:#07111F;
+
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
 
 }
 
@@ -28,13 +36,13 @@
 
     margin:auto;
 
+    height:105px;
+
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
-
-    height:110px;
 
 }
 
@@ -42,13 +50,7 @@
 
     height:120px;
 
-    width:auto;
-
-    object-fit:contain;
-
-    display:block;
-
-    transition:.3s;
+    transition:.35s;
 
 }
 
@@ -58,19 +60,19 @@
 
 }
 
-nav{
+.nav{
 
     display:flex;
 
     align-items:center;
 
-    gap:45px;
+    gap:40px;
 
 }
 
-nav a{
+.nav a{
 
-    color:#FFF;
+    color:white;
 
     text-decoration:none;
 
@@ -84,7 +86,7 @@ nav a{
 
 }
 
-nav a::after{
+.nav a::after{
 
     content:"";
 
@@ -100,19 +102,31 @@ nav a::after{
 
     background:#FF2D8D;
 
-    transition:.3s;
+    transition:.35s;
 
 }
 
-nav a:hover{
+.nav a:hover{
 
-    color:#FF2D8D;
+    color:#73B3FF;
 
 }
 
-nav a:hover::after{
+.nav a:hover::after{
 
     width:100%;
+
+}
+
+.active-link{
+
+    color:#73B3FF !important;
+
+}
+
+.active-link::after{
+
+    width:100% !important;
 
 }
 
@@ -124,9 +138,9 @@ nav a:hover::after{
 
     justify-content:center;
 
-    padding:18px 34px;
+    padding:16px 30px;
 
-    border-radius:16px;
+    border-radius:14px;
 
     background:linear-gradient(90deg,#1E5EFF,#FF2D8D);
 
@@ -136,23 +150,47 @@ nav a:hover::after{
 
     font-weight:700;
 
-    font-size:16px;
-
     transition:.35s;
-
-    box-shadow:0 15px 35px rgba(30,94,255,.18);
 
 }
 
 .btn-demo:hover{
 
-    transform:translateY(-4px);
+    transform:translateY(-3px);
 
-    box-shadow:0 20px 45px rgba(30,94,255,.35);
+    box-shadow:0 18px 35px rgba(30,94,255,.30);
 
 }
 
-@media(max-width:1100px){
+.menu-button{
+
+    display:none;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+}
+
+.mobile{
+
+    display:none;
+
+}
+
+.desktop{
+
+    display:flex;
+
+}
+
+@media(max-width:1000px){
 
 .container{
 
@@ -166,63 +204,87 @@ height:90px;
 
 }
 
-nav{
+.menu-button{
 
-gap:25px;
+display:block;
 
-}
-
-.btn-demo{
-
-padding:15px 22px;
-
-font-size:15px;
+z-index:1002;
 
 }
 
-}
-
-@media(max-width:900px){
-
-nav{
+.desktop{
 
 display:none;
 
 }
 
+.nav{
+
+position:fixed;
+
+top:90px;
+
+right:-100%;
+
+width:300px;
+
+height:calc(100vh - 90px);
+
+background:#07111F;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+padding:40px 30px;
+
+gap:30px;
+
+transition:.35s;
+
+box-shadow:-10px 0 30px rgba(0,0,0,.35);
+
+}
+
+.nav.active{
+
+right:0;
+
+}
+
+.mobile{
+
+display:flex;
+
+width:100%;
+
+margin-top:20px;
+
+}
+
+}
+
+@media(max-width:650px){
+
 .logo{
 
-height:80px;
+height:75px;
 
 }
 
 .container{
 
-height:90px;
+height:85px;
 
 }
 
-.btn-demo{
+.nav{
 
-padding:14px 20px;
+top:85px;
 
-font-size:14px;
+height:calc(100vh - 85px);
 
-}
-
-}
-
-@media(max-width:600px){
-
-.logo{
-
-height:65px;
-
-}
-
-.btn-demo{
-
-display:none;
+width:100%;
 
 }
 

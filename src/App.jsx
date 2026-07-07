@@ -1,38 +1,31 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Stats from "./components/Stats";
-import Services from "./components/Services";
-import About from "./components/About";
-import Portfolio from "./components/Portfolio";
-import Process from "./components/Process";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import WhatsAppButton from "./components/WhatsAppButton";
+import { Routes, Route } from "react-router-dom";
 
-import "./styles/contact.css";
+import Navbar from "./components/Navbar";
+
+import Home from "./pages/Home";
+import Empresa from "./pages/Empresa";
+import Solucoes from "./pages/Solucoes";
+import Portfolio from "./pages/Portfolio";
+import Contato from "./pages/Contato";
 
 function App() {
   return (
     <>
       <Navbar />
 
-      <Hero />
+      <main className="page-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-      <Stats />
+          <Route path="/empresa" element={<Empresa />} />
 
-      <Services />
+          <Route path="/solucoes" element={<Solucoes />} />
 
-      <About />
+          <Route path="/portfolio" element={<Portfolio />} />
 
-      <Portfolio />
-
-      <Process />
-
-      <Contact />
-
-      <Footer />
-
-      <WhatsAppButton />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+      </main>
     </>
   );
 }

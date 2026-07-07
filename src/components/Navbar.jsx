@@ -1,42 +1,113 @@
 import "../styles/navbar.css";
 import logo from "../assets/Logo da Duo Insight com tagline.png";
 
+import { Link, NavLink } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { useEffect, useState } from "react";
+
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setScrolled(window.scrollY > 20);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  function closeMenu() {
+    setMenuOpen(false);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
 
       <div className="container">
 
-        <a href="#inicio" className="logo-link">
+        <Link
+          to="/"
+          onClick={closeMenu}
+        >
           <img
             src={logo}
             alt="Duo Insight"
             className="logo"
           />
-        </a>
+        </Link>
 
-        <nav className="menu">
+        <nav className={menuOpen ? "nav active" : "nav"}>
 
-          <a href="#inicio">
-            Início
-          </a>
+          <NavLink
+            to="/"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Home
+          </NavLink>
 
-          <a href="#servicos">
+          <NavLink
+            to="/empresa"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Empresa
+          </NavLink>
+
+          <NavLink
+            to="/solucoes"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
             Soluções
-          </a>
+          </NavLink>
 
-          <a href="#contato">
+          <NavLink
+            to="/portfolio"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            Portfólio
+          </NavLink>
+
+          <NavLink
+            to="/contato"
+            onClick={closeMenu}
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
             Contato
-          </a>
+          </NavLink>
+
+          <Link
+            to="/contato"
+            className="btn-demo mobile"
+            onClick={closeMenu}
+          >
+            Solicitar Demonstração
+          </Link>
 
         </nav>
 
-        <a
-          href="#contato"
-          className="btn-demo"
+        <Link
+          to="/contato"
+          className="btn-demo desktop"
         >
           Solicitar Demonstração
-        </a>
+        </Link>
+
+        <button
+          className="menu-button"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
       </div>
 

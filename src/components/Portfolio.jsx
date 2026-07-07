@@ -1,132 +1,205 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../styles/portfolio.css";
 
 import dashboardLogistico from "../assets/Dashboard_Logistico.png";
-import dashboardFinanceiro from "../assets/Dashboard_Financeiro.png";
-import dashboardComercial from "../assets/Dashboard_Comercial.png";
+import dashboardTransportes from "../assets/Dashboard_Transportes.png";
+import dashboardDistribuicao from "../assets/Dashboard_Distribuicao.png";
 
 const projetos = [
+
   {
-    titulo: "Dashboard Logístico",
+
+    titulo: "Controle Logístico",
+
     categoria: "Power BI • Logística",
-    resultado: "-18% nos custos operacionais",
+
+    resultado: "Redução dos custos operacionais",
+
+    descricao:
+      "Acompanhe entregas, custos logísticos, SLA, produtividade e desempenho da operação em tempo real através de dashboards desenvolvidos especialmente para transportadoras e distribuidoras.",
+
     tecnologias: [
       "Power BI",
-      "SQL",
-      "Excel",
-      "Automação",
       "Indicadores",
+      "SLA",
+      "Custos",
+      "Logística"
     ],
-    descricao:
-      "Monitoramento completo de entregas, custos logísticos, SLA, transportadoras, produtividade e indicadores em tempo real.",
+
     imagem: dashboardLogistico,
+
   },
 
   {
-    titulo: "Dashboard Financeiro",
-    categoria: "Business Intelligence",
-    resultado: "+32% velocidade nas análises",
+
+    titulo: "Gestão de Transportes",
+
+    categoria: "Power BI • Transportes",
+
+    resultado: "Maior eficiência na operação",
+
+    descricao:
+      "Monitore frota, consumo de combustível, quilômetros rodados, ocupação dos veículos, desempenho das viagens e produtividade da operação.",
+
     tecnologias: [
       "Power BI",
-      "SQL",
-      "Python",
-      "Financeiro",
-      "DRE",
+      "Transportes",
+      "Frota",
+      "Rotas",
+      "Indicadores"
     ],
-    descricao:
-      "Fluxo de caixa, faturamento, margem, despesas, contas a pagar, contas a receber e indicadores financeiros.",
-    imagem: dashboardFinanceiro,
+
+    imagem: dashboardTransportes,
+
   },
 
   {
-    titulo: "Dashboard Comercial",
-    categoria: "Power BI • Comercial",
-    resultado: "+25% produtividade da equipe",
+
+    titulo: "Gestão da Distribuição",
+
+    categoria: "Power BI • Distribuição",
+
+    resultado: "Mais produtividade e nível de serviço",
+
+    descricao:
+      "Controle expedição, produtividade do centro de distribuição, nível de serviço, pedidos expedidos e desempenho das entregas.",
+
     tecnologias: [
       "Power BI",
-      "CRM",
-      "SQL",
-      "KPIs",
-      "Vendas",
+      "Distribuição",
+      "Centro de Distribuição",
+      "Expedição",
+      "Indicadores"
     ],
-    descricao:
-      "Funil comercial, metas, ticket médio, conversão, vendas e desempenho da equipe.",
-    imagem: dashboardComercial,
+
+    imagem: dashboardDistribuicao,
+
   },
+
 ];
 
 function Portfolio() {
 
-  const [projetoSelecionado, setProjetoSelecionado] = useState(null);
+  const [modal, setModal] = useState(null);
+
+  const navigate = useNavigate();
+
+  function abrirProjeto(projeto) {
+
+    setModal(projeto);
+
+  }
+
+  function fecharProjeto() {
+
+    setModal(null);
+
+  }
+
+  function solicitar() {
+
+    fecharProjeto();
+
+    navigate("/contato");
+
+    window.scrollTo({
+
+      top: 0,
+
+      behavior: "smooth",
+
+    });
+
+  }
 
   return (
-    <>
-      <section className="portfolio" id="portfolio">
 
-        <div className="portfolio-header">
+    <section className="portfolio">
 
-          <span>Projetos Desenvolvidos</span>
+      <div className="portfolio-header">
 
-          <h2>
-            Dashboards que transformam dados em decisões estratégicas.
-          </h2>
+        <span>Soluções Desenvolvidas</span>
 
-          <p>
-            Conheça alguns exemplos das soluções desenvolvidas pela Duo Insight
-            para empresas de diferentes segmentos.
-          </p>
+        <h2>
 
-        </div>
+          Soluções desenvolvidas para aumentar a eficiência da sua operação logística.
 
-        <div className="portfolio-grid">
+        </h2>
 
-          {projetos.map((projeto) => (
+        <p>
 
-            <div
-              className="portfolio-card"
-              key={projeto.titulo}
-            >
+          Conheça algumas soluções desenvolvidas especialmente para transportadoras e distribuidoras.
 
-              <img
-                src={projeto.imagem}
-                alt={projeto.titulo}
-              />
+        </p>
 
-              <div className="portfolio-content">
+      </div>
 
-                <span className="portfolio-category">
-                  {projeto.categoria}
-                </span>
+      <div className="portfolio-grid">
 
-                <h3>{projeto.titulo}</h3>
+        {projetos.map((projeto) => (
 
-                <p>{projeto.descricao}</p>
+          <div
+            className="portfolio-card"
+            key={projeto.titulo}
+          >
 
-                <div className="portfolio-result">
-                  Resultado: {projeto.resultado}
-                </div>
+            <img
+              src={projeto.imagem}
+              alt={projeto.titulo}
+            />
 
-                <button
-                  onClick={() => setProjetoSelecionado(projeto)}
-                >
-                  Ver Projeto Completo →
-                </button>
+            <div className="portfolio-content">
+
+              <span className="portfolio-category">
+
+                {projeto.categoria}
+
+              </span>
+
+              <h3>
+
+                {projeto.titulo}
+
+              </h3>
+
+              <p>
+
+                {projeto.descricao}
+
+              </p>
+
+              <div className="portfolio-result">
+
+                Resultado esperado: {projeto.resultado}
 
               </div>
 
+              <button
+
+                className="portfolio-button"
+
+                onClick={() => abrirProjeto(projeto)}
+
+              >
+
+                Ver Solução →
+
+              </button>
+
             </div>
 
-          ))}
+          </div>
 
-        </div>
+        ))}
 
-      </section>
-
-      {projetoSelecionado && (
+      </div>
+            {modal && (
 
         <div
           className="portfolio-modal-overlay"
-          onClick={() => setProjetoSelecionado(null)}
+          onClick={fecharProjeto}
         >
 
           <div
@@ -135,54 +208,84 @@ function Portfolio() {
           >
 
             <button
-              className="close-modal"
-              onClick={() => setProjetoSelecionado(null)}
+              className="portfolio-close"
+              onClick={fecharProjeto}
             >
-              ✕
+              ×
             </button>
 
             <img
-              src={projetoSelecionado.imagem}
-              alt={projetoSelecionado.titulo}
+              src={modal.imagem}
+              alt={modal.titulo}
             />
 
-            <div className="modal-content">
+            <div className="portfolio-modal-content">
 
               <span className="portfolio-category">
-                {projetoSelecionado.categoria}
+
+                {modal.categoria}
+
               </span>
 
               <h2>
-                {projetoSelecionado.titulo}
+
+                {modal.titulo}
+
               </h2>
 
               <p>
-                {projetoSelecionado.descricao}
+
+                {modal.descricao}
+
               </p>
 
-              <div className="tech-list">
+              <div className="portfolio-result">
 
-                {projetoSelecionado.tecnologias.map((tech) => (
+                Benefício: {modal.resultado}
 
-                  <span key={tech}>
-                    {tech}
+              </div>
+
+              <h4>
+
+                O que você acompanha nesse painel
+
+              </h4>
+
+              <div className="portfolio-tags">
+
+                {modal.tecnologias.map((item) => (
+
+                  <span key={item}>
+
+                    {item}
+
                   </span>
 
                 ))}
 
               </div>
 
-              <div className="portfolio-result">
-                Resultado obtido: {projetoSelecionado.resultado}
-              </div>
+              <div className="portfolio-actions">
 
-              <a
-                href="#contato"
-                className="modal-button"
-                onClick={() => setProjetoSelecionado(null)}
-              >
-                Solicitar Demonstração
-              </a>
+                <button
+                  className="portfolio-button"
+                  onClick={solicitar}
+                >
+
+                  Solicitar Demonstração
+
+                </button>
+
+                <button
+                  className="portfolio-secondary"
+                  onClick={fecharProjeto}
+                >
+
+                  Fechar
+
+                </button>
+
+              </div>
 
             </div>
 
@@ -192,8 +295,10 @@ function Portfolio() {
 
       )}
 
-    </>
+    </section>
+
   );
+
 }
 
 export default Portfolio;
